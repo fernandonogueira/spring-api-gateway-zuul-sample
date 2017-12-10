@@ -17,7 +17,7 @@ services:
     networks:
       - spring
   hotels:
-    build: service1/
+    build: hotels/
     ports:
      - "7777"
     depends_on:

@@ -1,4 +1,4 @@
-package talk.service1.model;
+package talk.hotels.model;
 
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;

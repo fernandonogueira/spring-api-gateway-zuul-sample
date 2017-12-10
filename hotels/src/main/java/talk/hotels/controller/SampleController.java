@@ -1,9 +1,9 @@
-package talk.service1.controller;
+package talk.hotels.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import talk.service1.model.Hotel;
+import talk.hotels.model.Hotel;
 
 import java.util.ArrayList;
 import java.util.List;

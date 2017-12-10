@@ -2,7 +2,7 @@ cd gateway
 mvn clean package -DskipTests
 cd ..
 
-cd service1
+cd hotels
 mvn clean package -DskipTests
 cd ..
 
