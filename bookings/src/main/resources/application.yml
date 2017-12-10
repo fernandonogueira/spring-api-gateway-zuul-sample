@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:7774}
+
+
+spring:
+  application:
+    name: bookings-service
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: ${CONSUL_PORT:8500}
+    inetutils:
+      preferred-networks:
+        - 192.168
+        - 10.0

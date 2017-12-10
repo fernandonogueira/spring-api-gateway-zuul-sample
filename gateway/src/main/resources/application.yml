@@ -1,0 +1,27 @@
+zuul:
+  routes:
+    books:
+      path: /hotel/**
+      serviceId: hotels-service
+
+    reserves:
+      path: /booking/**
+      serviceId: bookings-service
+  prefix: /api
+
+server:
+  port: ${PORT:7775}
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: consul
+      port: 8500
+    inetutils:
+      preferred-networks:
+        - 192.168
+        - 10.0

@@ -1,0 +1,16 @@
+server:
+  port: ${PORT:7777}
+
+spring:
+  application:
+    name: hotels-service
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: ${CONSUL_HOST:consul}
+      port: ${CONSUL_PORT:8500}
+    inetutils:
+      preferred-networks:
+        - 192.168
+        - 10.0

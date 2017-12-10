@@ -1,0 +1,42 @@
+version: '3'
+services:
+  consul:
+    image: consul:latest
+    ports:
+      - "8500:8500"
+    networks:
+      - spring
+  gateway:
+    build: gateway/
+    ports:
+     - "7775:7775"
+    depends_on:
+      - consul
+    links:
+      - consul:consul
+    networks:
+      - spring
+  hotels:
+    build: service1/
+    ports:
+     - "7777"
+    depends_on:
+      - consul
+    links:
+      - consul:consul
+    networks:
+      - spring
+  bookings:
+    build: bookings/
+    ports:
+     - "7774"
+    depends_on:
+      - consul
+    links:
+      - consul:consul
+    networks:
+      - spring
+
+networks:
+ spring:
+  external: true
