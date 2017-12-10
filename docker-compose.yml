@@ -40,3 +40,6 @@ services:
 networks:
  spring:
   external: true
+
+
+# consul agent -dev -advertise 127.0.0.1
