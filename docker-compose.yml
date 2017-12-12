@@ -22,6 +22,7 @@ services:
      - "7777"
     depends_on:
       - consul
+      - gateway
     links:
       - consul:consul
     networks:
@@ -32,8 +33,20 @@ services:
      - "7774"
     depends_on:
       - consul
+      - gateway
     links:
       - consul:consul
+      - hotels:hotels
+    networks:
+      - spring
+  prometheus:
+    image: prom/prometheus:v2.0.0
+    ports:
+      - "9090:9090"
+    depends_on:
+      - consul
+    links:
+      - consul
     networks:
       - spring
 
